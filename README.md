@@ -1,4 +1,4 @@
-# site-algoritmos-fundamentais
+# basic fundamental algorithms
 
 Site that contains the basic fundamental algorithms implemented using node JS.
 
