@@ -1,0 +1,123 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* MENU */
+.menu {
+    display: flex;
+    width: 100%;
+    background-color: rgb(43, 149, 190);
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0;
+    position: relative;
+}
+
+.menu .top-image {
+    width: 15%;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 2%;
+    left: 0;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+}
+.menu ul li {
+    padding: 0 1%;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.25s;
+}
+.menu ul li a:hover {
+    color: rgb(253, 175, 59);
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    background: rgb(24, 24, 24);
+    margin-top: auto;
+}
+
+footer p {
+    color: #fff;
+}
+
+footer .card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    width: 50%;
+}
+footer .card {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    padding: 2%;
+    border-radius: 24px;
+    background-color: rgb(61, 61, 61);
+    margin: 0 4%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+footer .card:hover {
+    background-color: rgb(43, 149, 190);
+    transform: translateY(-0.5rem);
+}
+footer .card:hover h3 {
+    color: #fff;
+}
+footer .card:hover .info .social-media a {
+    color: rgb(253, 175, 59);
+}
+footer .card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+footer .card .info {
+    width: 100%;
+    margin-left: 5%;
+}
+footer .card h4 {
+    color: #fff;
+    margin: 0;
+}
+footer .card .info .social-media {
+    margin-top: 2%;
+}
+footer .card .info .social-media a {
+    color: rgb(43, 149, 190);
+    font-size: 1.4rem;
+    margin-right: 5%;
+    cursor: pointer;
+    transition: 0.25s;
+}
+footer .card .info .social-media a:hover {
+    color: #fff;
+}
