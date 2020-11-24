@@ -1,5 +1,19 @@
 <%- contentFor('title') %>
 Página inicial
 
+<%- contentFor('style') %>
+<link rel='stylesheet' href='/static/css/home.css' />
+
 <%- contentFor('body') %>
-<h1>Olá mundo</h1>
+<div class='content-box'>
+  <img src='/static/images/initial-image.jpg' />
+
+  <div class='button-items-list'>
+    <button>Número primo</button>
+    <button>Somatório</button>
+    <button>Fibonacci</button>
+    <button>MDC</button>
+    <button>Ordenação</button>
+    <button>Contagem</button>
+  </div>
+</div>
