@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 // configurações
 app.use(bodyParser.json())
-app.use(express.static('public'))
+app.use('/static', express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))
 
