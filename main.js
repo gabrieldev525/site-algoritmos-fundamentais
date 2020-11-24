@@ -3,11 +3,13 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const bodyParser = require('body-parser')
+const expressLayouts = require('express-ejs-layouts');
 
 // configurações
 app.use(bodyParser.json())
 app.use('/static', express.static('public'))
 app.set('view engine', 'ejs')
+app.use(expressLayouts)
 app.set('views', path.join(__dirname, '/views'))
 
 // cria as rotas
