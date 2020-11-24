@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Algoritmos fundamentais - <%- defineContent('title') %></title>
+
+    <link rel='stylesheet' href='/static/css/index.css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+
+    <%- defineContent('style') %>
+  </head>
+  <body>
+    <div class='menu'>
+      <img src='/static/images/top-image.png' class='top-image' />
+
+      <ul>
+        <li><a href=''>Inicio</a></li>
+        <li><a href=''>Número primo</a></li>
+        <li><a href=''>Somatório</a></li>
+        <li><a href=''>Fibonacci</a></li>
+        <li><a href=''>MDC</a></li>
+        <li><a href=''>Ordenação</a></li>
+        <li><a href=''>Contagem</a></li>
+      </ul>
+    </div>
+
+    <%- body %>
+
+    <footer>
+      <p>Site desenvolvido por:</p>
+
+      <div class='card-content'>
+        <div class='card'>
+          <img src='/static/images/gabriel.jpeg' />
+          <div class='info'>
+            <h4>Gabriel Victor</h4>
+            <div class='social-media'>
+              <a target='_blank' href='https://github.com/gabrieldev525'><i class='fab fa-github'></i></a>
+              <a target='_blank' href='https://www.linkedin.com/in/gabriel-victor-7a5425191/'><i class='fab fa-linkedin'></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class='card'>
+          <img src='/static/images/helder.jpeg' />
+          <div class='info'>
+            <h4>Helder Junior</h4>
+            <div class='social-media'>
+              <a target='_blank' href='https://github.com/Heldercmj'><i class='fab fa-github'></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <%- defineContent('scripts') %>
+  </body>
+</html>
