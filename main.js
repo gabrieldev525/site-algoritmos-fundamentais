@@ -5,6 +5,9 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts');
 
+// variáveis de ambiente
+require('dotenv').config()
+
 // configurações
 app.use(bodyParser.json())
 app.use('/static', express.static('public'))
@@ -18,5 +21,5 @@ app.get('/', (req, res) => {
 })
 
 // inicia o servidor
-const port = 3000
+const port = process.env.PORT | 3000
 app.listen(port, () => console.log(`app running at http://localhost:${port}`))
