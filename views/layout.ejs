@@ -3,10 +3,12 @@
   <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Algoritmos fundamentais</title>
+    <title>Algoritmos fundamentais - <%- defineContent('title') %></title>
 
     <link rel='stylesheet' href='/static/css/index.css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+
+    <%- defineContent('style') %>
   </head>
   <body>
     <div class='menu'>
@@ -51,5 +53,7 @@
         </div>
       </div>
     </footer>
+
+    <%- defineContent('scripts') %>
   </body>
 </html>
