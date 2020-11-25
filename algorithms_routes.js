@@ -30,6 +30,13 @@ const ALGORITHM_ROUTES = {
     url: '/fibonacci',
     algorithm: math.fibonacci,
     format_result: (result) => result.join(', ')
+  },
+  somatorio: {
+    form_type: 'number_list',
+    title: 'Somatório',
+    url: '/somatorio',
+    algorithm: math.somatorio,
+    format_result: (result) => `O resultado do somatório é: ${result}`
   }
 }
 
