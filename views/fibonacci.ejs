@@ -1,0 +1,14 @@
+<%- contentFor('title') %>
+Fibonacci
+
+<%- contentFor('body') %>
+<div class='content-box'>
+  <form action='/fibonacci' method='POST'>
+    <input type='number' name='num'>
+    <input type='submit' value='enviar'>
+  </form>
+
+  <% if(result) { %>
+    <h4><%= result %></h4>
+  <% } %>
+</div>

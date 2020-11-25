@@ -29,8 +29,31 @@ const quickSort = (array) => {
   return subarray.concat(quickSort(left), pivo, quickSort(right))
 }
 
+const fibonacci = (n) => {
+  let prenultimo = null
+  let ultimo = null
+  let final = []
+  for(let i = 0; i < n; i++) {
+    if(prenultimo == null) {
+      prenultimo = i
+      final.push(prenultimo)
+    } else if(ultimo == null) {
+      ultimo = i
+      final.push(ultimo)
+    } else {
+      let soma = prenultimo + ultimo
+      prenultimo = ultimo
+      ultimo = soma
+      final.push(soma)
+    }
+  }
+
+  return final
+}
+
 module.exports = {
   isPrime,
   contagem,
-  quickSort
+  quickSort,
+  fibonacci
 }
