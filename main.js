@@ -78,6 +78,23 @@ app.post('/ordenacao', (req, res) => {
   })
 })
 
+// Fibonacci
+app.get('/fibonacci', (req, res) => {
+  res.render('fibonacci', {
+    menu: true,
+    result: null
+  })
+})
+app.post('/fibonacci', (req, res) => {
+  const num = req.body.num
+  const result = math.fibonacci(num)
+
+  res.render('fibonacci', {
+    menu: true,
+    result: result.join(', ')
+  })
+})
+
 
 // inicia o servidor
 const port = process.env.PORT | 3000
