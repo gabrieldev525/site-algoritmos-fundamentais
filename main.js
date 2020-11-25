@@ -5,8 +5,8 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts');
 
-// Módulo dos algorítmos
-const math = require('./modules/math')
+// algorithm routes
+const ALGORITHM_ROUTES = require('./algorithms_routes').ALGORITHM_ROUTES
 
 // variáveis de ambiente
 require('dotenv').config()
@@ -14,6 +14,7 @@ require('dotenv').config()
 // configurações
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use('/static', express.static('public'))
 app.set('view engine', 'ejs')
 app.use(expressLayouts)
@@ -26,38 +27,47 @@ app.get('/', (req, res) => {
   })
 })
 
-app.get('/contagem', (req, res) => {
-  res.render('contagem', {
-    menu:true,
-    resultado:null
+// Create algorithms routes based at contants
+const routes_keys = Object.keys(ALGORITHM_ROUTES)
+routes_keys.forEach(item => {
+  const curr = ALGORITHM_ROUTES[item]
+
+  // create algorithm GET router
+  app.get(curr.url, (req, res) => {
+    res.render('algorithm', {
+      menu: true,
+      ...ALGORITHM_ROUTES[req.url.substring(1)]
+    })
+  })
+
+  // create algorithm POST router to treat the result
+  app.post(curr.url, (req, res) => {
+
+    let params = []
+    // get params depending from form type
+    if(curr.form_type == 'number') {
+      // input number can have many fields
+      for(let i = 1; i <= curr.input_count; i++) {
+        params.push(req.body['num' + i])
+      }
+    } else if(curr.form_type == 'number_list')
+      params.push(req.body.num_list.trim().split(','))
+
+    // call algorith method to get the result
+    let result = curr.algorithm(...params)
+
+    // if the route has a treatment in result, call the function defined in the constants
+    if(curr.format_result)
+      result = curr.format_result(result)
+
+    // render the view with response
+    res.render('algorithm', {
+      result,
+      ...ALGORITHM_ROUTES[req.url.substring(1)]
+    })
   })
 })
 
-app.post('/contagem', (req, res) => {
-  const num = req.body.num
-  const resultado = math.contagem(num)
-  res.render('contagem', {
-    menu:true,
-    resultado
-  })
-})
-
-app.get('/somatorio', (req, res) => { 
-  res.render('somatorio', {
-    menu:true,
-    resultado:null
-  })
-})
-
-app.post('/somatorio', (req, res) => {
-  let num_list = req.body.num_list
-  num_list = num_list.trim().split(',')
-  const resultado = math.somatorio(num_list)
-  res.render('somatorio', {
-    menu:true,
-    resultado
-  })
-})
 // inicia o servidor
 const port = process.env.PORT | 3000
-app.listen(port, () => console.log(`app running at http://localhost:${port}`))
+app.listen(port)
