@@ -1,15 +1,27 @@
-const isPrime = (n) => {
+/**
+ * Verify if a number is prime
+ * @param {number} number - the number to check if it's prime
+ */
+const isPrime = (number) => {
   let prime = true
-  for(let i = 0; i < n; i++) {
-    if(n % i == 0 && i != 1 && i != n)
+  for(let i = 0; i < number; i++) {
+    if(number % i == 0 && i != 1 && i != number)
       prime = false
   }
 
   return prime
 }
 
-const contagem = (numero) => numero
+/**
+ * @param {number} number - the number to finish the count
+ */
+const counter = (number) => numero
 
+/**
+ * Sort a list of number
+ *
+ * @param {array} array - the list of number that will be sorted in asc mode
+ */
 const quickSort = (array) => {
   if(array.length <= 1)
     return array
@@ -17,18 +29,22 @@ const quickSort = (array) => {
   let left = []
   let right = []
   let subarray = []
-  let pivo = array.pop()
+  let pivo = parseInt(array.pop())
 
   for(let i = 0; i < array.length; i++) {
-    if(array[i] <= pivo)
-      left.push(array[i])
+    if(parseInt(array[i]) <= pivo)
+      left.push(parseInt(array[i]))
     else
-      right.push(array[i])
+      right.push(parseInt(array[i]))
   }
 
   return subarray.concat(quickSort(left), pivo, quickSort(right))
 }
 
+/**
+ *
+ * @param {number} n - The number that'll be used to calculate fibonacci
+ */
 const fibonacci = (n) => {
   let prenultimo = null
   let ultimo = null
@@ -53,7 +69,7 @@ const fibonacci = (n) => {
 
 module.exports = {
   isPrime,
-  contagem,
+  counter,
   quickSort,
   fibonacci
 }
