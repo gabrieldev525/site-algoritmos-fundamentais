@@ -5,7 +5,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts');
 
-// Módulo dos algorítmos
+// math modules
 const math = require('./modules/math')
 
 // variáveis de ambiente
@@ -14,6 +14,7 @@ require('dotenv').config()
 // configurações
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use('/static', express.static('public'))
 app.set('view engine', 'ejs')
 app.use(expressLayouts)
@@ -26,13 +27,13 @@ app.get('/', (req, res) => {
   })
 })
 
+// contagem
 app.get('/contagem', (req, res) => {
   res.render('contagem', {
     menu:true,
     resultado:null
   })
 })
-
 app.post('/contagem', (req, res) => {
   const num = req.body.num
   const resultado = math.contagem(num)
@@ -41,6 +42,24 @@ app.post('/contagem', (req, res) => {
     resultado
   })
 })
+
+// número primo
+app.get('/primo', (req, res) => {
+  res.render('primo', {
+    result: null,
+    menu:true,
+  })
+})
+app.post('/primo', (req, res) => {
+  const result = math.isPrime(req.body.num)
+
+  res.render('primo', {
+    result: result ? 'O número não é primo' : 'O número é primo',
+    menu:true,
+  })
+})
+
+
 // inicia o servidor
 const port = process.env.PORT | 3000
-app.listen(port, () => console.log(`app running at http://localhost:${port}`))
+app.listen(port)
