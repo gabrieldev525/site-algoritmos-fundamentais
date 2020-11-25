@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <%- include('layouts/header'); -%>
-  <body>
-    <%- include('layouts/menu'); -%>
+<%- contentFor('title') %>
+Página inicial
 
+<%- contentFor('style') %>
+<link rel='stylesheet' href='/static/css/home.css' />
 
+<%- contentFor('body') %>
+<div class='content-box'>
+  <img src='/static/images/initial-image.jpg' />
 
-    <%- include('layouts/footer'); -%>
-  </body>
-</html>
+  <div class='button-items-list'>
+    <button>Número primo</button>
+    <button>Somatório</button>
+    <button>Fibonacci</button>
+    <button>MDC</button>
+    <button>Ordenação</button>
+    <button>Contagem</button>
+  </div>
+</div>

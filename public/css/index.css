@@ -121,3 +121,17 @@ footer .card .info .social-media a {
 footer .card .info .social-media a:hover {
     color: #fff;
 }
+
+
+/* general box */
+.content-box {
+    display: flex;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 24px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+    margin: 5% auto;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
