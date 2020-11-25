@@ -68,13 +68,28 @@ const fibonacci = (n) => {
 }
 
 const somatorio = (numeros) => {
-    var somatorio = 0;
+  var somatorio = 0;
 
-    for(let i = 0; i < numeros.length; i++)
-    {
-        somatorio += parseInt (numeros[i]);
-    }
-    return somatorio;
+  for(let i = 0; i < numeros.length; i++)
+  {
+      somatorio += parseInt (numeros[i]);
+  }
+  return somatorio;
+}
+
+const mdc = (m, n) => {
+  var candidato = 0;
+  m = parseInt(m);
+  n = parseInt(n);
+
+  candidato = Math.min(m, n);
+
+  while(m % candidato != 0 || n % candidato != 0)
+  {
+      candidato--;
+  }
+
+  return candidato;
 }
 
 
@@ -83,5 +98,6 @@ module.exports = {
   isPrime,
   counter,
   quickSort,
-  fibonacci
+  fibonacci,
+  mdc
 }
