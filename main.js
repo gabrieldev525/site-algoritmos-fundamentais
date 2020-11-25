@@ -30,15 +30,15 @@ app.get('/', (req, res) => {
 // contagem
 app.get('/contagem', (req, res) => {
   res.render('contagem', {
-    menu:true,
-    resultado:null
+    menu: true,
+    resultado: null
   })
 })
 app.post('/contagem', (req, res) => {
   const num = req.body.num
   const resultado = math.contagem(num)
   res.render('contagem', {
-    menu:true,
+    menu: true,
     resultado
   })
 })
@@ -47,7 +47,7 @@ app.post('/contagem', (req, res) => {
 app.get('/primo', (req, res) => {
   res.render('primo', {
     result: null,
-    menu:true,
+    menu:true
   })
 })
 app.post('/primo', (req, res) => {
@@ -55,7 +55,26 @@ app.post('/primo', (req, res) => {
 
   res.render('primo', {
     result: result ? 'O número não é primo' : 'O número é primo',
-    menu:true,
+    menu:true
+  })
+})
+
+// ordenação
+app.get('/ordenacao', (req, res) => {
+  res.render('ordenacao', {
+    result: null,
+    menu: true
+  })
+})
+app.post('/ordenacao', (req, res) => {
+  let num_list = req.body.num_list
+  num_list = num_list.trim().split(',')
+  num_list = num_list.map(n => parseInt(n))
+
+  const result = math.quickSort(num_list)
+  res.render('ordenacao', {
+    result: result.join(', '),
+    menu: true
   })
 })
 
