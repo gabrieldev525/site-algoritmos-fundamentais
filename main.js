@@ -5,8 +5,8 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts');
 
-// math modules
-const math = require('./modules/math')
+// algorithm routes
+const ALGORITHM_ROUTES = require('./algorithms_routes').ALGORITHM_ROUTES
 
 // variáveis de ambiente
 require('dotenv').config()
@@ -27,71 +27,44 @@ app.get('/', (req, res) => {
   })
 })
 
-// contagem
-app.get('/contagem', (req, res) => {
-  res.render('contagem', {
-    menu: true,
-    resultado: null
-  })
-})
-app.post('/contagem', (req, res) => {
-  const num = req.body.num
-  const resultado = math.contagem(num)
-  res.render('contagem', {
-    menu: true,
-    resultado
-  })
-})
+// Create algorithms routes based at contants
+const routes_keys = Object.keys(ALGORITHM_ROUTES)
+routes_keys.forEach(item => {
+  const curr = ALGORITHM_ROUTES[item]
 
-// número primo
-app.get('/primo', (req, res) => {
-  res.render('primo', {
-    result: null,
-    menu:true
+  // create algorithm GET router
+  app.get(curr.url, (req, res) => {
+    res.render('algorithm', {
+      menu: true,
+      ...ALGORITHM_ROUTES[req.url.substring(1)]
+    })
   })
-})
-app.post('/primo', (req, res) => {
-  const result = math.isPrime(req.body.num)
 
-  res.render('primo', {
-    result: result ? 'O número não é primo' : 'O número é primo',
-    menu:true
-  })
-})
+  // create algorithm POST router to treat the result
+  app.post(curr.url, (req, res) => {
 
-// ordenação
-app.get('/ordenacao', (req, res) => {
-  res.render('ordenacao', {
-    result: null,
-    menu: true
-  })
-})
-app.post('/ordenacao', (req, res) => {
-  let num_list = req.body.num_list
-  num_list = num_list.trim().split(',')
-  num_list = num_list.map(n => parseInt(n))
+    let params = []
+    // get params depending from form type
+    if(curr.form_type == 'number') {
+      // input number can have many fields
+      for(let i = 1; i <= curr.input_count; i++) {
+        params.push(req.body['num' + i])
+      }
+    } else if(curr.form_type == 'number_list')
+      params.push(req.body.num_list.trim().split(','))
 
-  const result = math.quickSort(num_list)
-  res.render('ordenacao', {
-    result: result.join(', '),
-    menu: true
-  })
-})
+    // call algorith method to get the result
+    let result = curr.algorithm(...params)
 
-// Fibonacci
-app.get('/fibonacci', (req, res) => {
-  res.render('fibonacci', {
-    menu: true,
-    result: null
-  })
-})
-app.post('/fibonacci', (req, res) => {
-  const num = req.body.num
-  const result = math.fibonacci(num)
+    // if the route has a treatment in result, call the function defined in the constants
+    if(curr.format_result)
+      result = curr.format_result(result)
 
-  res.render('fibonacci', {
-    menu: true,
-    result: result.join(', ')
+    // render the view with response
+    res.render('algorithm', {
+      result,
+      ...ALGORITHM_ROUTES[req.url.substring(1)]
+    })
   })
 })
 

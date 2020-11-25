@@ -11,7 +11,7 @@
     <%- defineContent('style') %>
   </head>
   <body>
-    <% if (menu) { %>
+    <% if (typeof menu === 'undefined' || menu) { %>
       <div class='menu'>
         <img src='/static/images/top-image.png' class='top-image' />
 
