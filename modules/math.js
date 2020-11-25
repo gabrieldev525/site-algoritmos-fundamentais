@@ -10,7 +10,27 @@ const isPrime = (n) => {
 
 const contagem = (numero) => numero
 
+const quickSort = (array) => {
+  if(array.length <= 1)
+    return array
+
+  let left = []
+  let right = []
+  let subarray = []
+  let pivo = array.pop()
+
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] <= pivo)
+      left.push(array[i])
+    else
+      right.push(array[i])
+  }
+
+  return subarray.concat(quickSort(left), pivo, quickSort(right))
+}
+
 module.exports = {
   isPrime,
-  contagem
+  contagem,
+  quickSort
 }
