@@ -11,19 +11,21 @@
     <%- defineContent('style') %>
   </head>
   <body>
-    <div class='menu'>
-      <img src='/static/images/top-image.png' class='top-image' />
+    <% if (menu) { %> 
+      <div class='menu'>
+        <img src='/static/images/top-image.png' class='top-image' />
 
-      <ul>
-        <li><a href=''>Inicio</a></li>
-        <li><a href=''>Número primo</a></li>
-        <li><a href=''>Somatório</a></li>
-        <li><a href=''>Fibonacci</a></li>
-        <li><a href=''>MDC</a></li>
-        <li><a href=''>Ordenação</a></li>
-        <li><a href=''>Contagem</a></li>
-      </ul>
-    </div>
+        <ul>
+          <li><a href=''>Inicio</a></li>
+          <li><a href=''>Número primo</a></li>
+          <li><a href=''>Somatório</a></li>
+          <li><a href=''>Fibonacci</a></li>
+          <li><a href=''>MDC</a></li>
+          <li><a href=''>Ordenação</a></li>
+          <li><a href=''>Contagem</a></li>
+        </ul>
+      </div>
+    <% } %> 
 
     <%- body %>
 
