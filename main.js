@@ -41,6 +41,23 @@ app.post('/contagem', (req, res) => {
     resultado
   })
 })
+
+app.get('/somatorio', (req, res) => { 
+  res.render('somatorio', {
+    menu:true,
+    resultado:null
+  })
+})
+
+app.post('/somatorio', (req, res) => {
+  let num_list = req.body.num_list
+  num_list = num_list.trim().split(',')
+  const resultado = math.somatorio(num_list)
+  res.render('somatorio', {
+    menu:true,
+    resultado
+  })
+})
 // inicia o servidor
 const port = process.env.PORT | 3000
 app.listen(port, () => console.log(`app running at http://localhost:${port}`))

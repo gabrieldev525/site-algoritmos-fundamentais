@@ -1,0 +1,11 @@
+<%- contentFor ('title') %>
+Somatorio  
+
+<%- contentFor ('body') %>
+ <form action="/somatorio" method="POST">
+    <input type="text" name="num_list">
+    <input type="submit">
+</form>
+<% if (resultado) { %> 
+    <h1><%= resultado %> </h1>
+<% } %> 
