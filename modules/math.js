@@ -8,6 +8,9 @@ const isPrime = (n) => {
   return prime
 }
 
+const contagem = (numero) => numero
+
 module.exports = {
-  isPrime
+  isPrime,
+  contagem
 }

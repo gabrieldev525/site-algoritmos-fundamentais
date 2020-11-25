@@ -22,22 +22,43 @@ app.set('views', path.join(__dirname, '/views'))
 
 // cria as rotas
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {
+    menu:true
+  })
+})
+
+// contagem
+app.get('/contagem', (req, res) => {
+  res.render('contagem', {
+    menu:true,
+    resultado:null
+  })
+})
+app.post('/contagem', (req, res) => {
+  const num = req.body.num
+  const resultado = math.contagem(num)
+  res.render('contagem', {
+    menu:true,
+    resultado
+  })
 })
 
 // número primo
 app.get('/primo', (req, res) => {
   res.render('primo', {
-    'result': null
+    result: null,
+    menu:true,
   })
 })
 app.post('/primo', (req, res) => {
   const result = math.isPrime(req.body.num)
 
   res.render('primo', {
-    'result': result ? 'O número não é primo' : 'O número é primo'
+    result: result ? 'O número não é primo' : 'O número é primo',
+    menu:true,
   })
 })
+
 
 // inicia o servidor
 const port = process.env.PORT | 3000
