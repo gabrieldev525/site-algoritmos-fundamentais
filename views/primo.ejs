@@ -1,0 +1,15 @@
+<%- contentFor('title') %>
+Número primo
+
+
+<%- contentFor('body') %>
+<div class='content-box'>
+  <form action='/primo' method='POST'>
+    <input type='number' name='num' />
+    <input type='submit' value='Verificar' />
+  </form>
+
+  <% if (result) { %>
+    <h4><%= result %></h4>
+  <% } %>
+</div>
