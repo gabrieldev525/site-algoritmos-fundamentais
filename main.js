@@ -36,7 +36,7 @@ routes_keys.forEach(item => {
   app.get(curr.url, (req, res) => {
     res.render('algorithm', {
       menu: true,
-      ...ALGORITHM_ROUTES[req.url.substring(1)]
+      ...curr
     })
   })
 
@@ -63,7 +63,7 @@ routes_keys.forEach(item => {
     // render the view with response
     res.render('algorithm', {
       result,
-      ...ALGORITHM_ROUTES[req.url.substring(1)]
+      ...curr
     })
   })
 })
