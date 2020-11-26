@@ -37,7 +37,7 @@ const ALGORITHM_ROUTES = {
     title: 'Somatório',
     url: '/somatorio',
     algorithm: math.sum,
-    format_result: (result) => `O resultado do somatório é: ${result}`
+    format_result: (result) => `O resultado do somatório dos valores informados é: ${result}`
   },
   mdc: {
     form_type: 'number',
@@ -45,7 +45,7 @@ const ALGORITHM_ROUTES = {
     title: 'Máximo Divisor Comum',
     url:'/mdc',
     algorithm: math.mdc,
-    format_result: (result) => `O resultado do MDC é: ${result}`
+    format_result: (result) => `O resultado do MDC dos valores informados é: ${result}`
   }
 
 }
