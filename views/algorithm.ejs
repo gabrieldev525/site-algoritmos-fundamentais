@@ -13,10 +13,10 @@
 
       <% if(form_type == 'number') { %>
         <% for(let i = 1; i <= input_count; i++) { %>
-          <input type="number" name="num<%= i %>" placeholder="Informe o <%=input_count > 1 ? i + '° ' : ''%>valor">
+          <input required type="number" name="num<%= i %>" placeholder="Informe o <%=input_count > 1 ? i + '° ' : ''%>valor">
         <% } %>
       <% } else if(form_type == 'number_list') { %>
-        <input type="text" name="num_list" placeholder="Informe os valores separados por virgula.">
+        <input required type="text" name="num_list" placeholder="Informe os valores separados por virgula.">
       <% } %>
 
       <input type="submit" value='enviar'>
