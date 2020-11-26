@@ -1,3 +1,7 @@
+.content-box.algorithm {
+    width: 40%;
+}
+
 .content-box .algorithm-content {
     display: flex;
     flex-direction: column;
@@ -15,7 +19,7 @@
 .content-box .algorithm-content form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
     align-items: center;
 }
 
