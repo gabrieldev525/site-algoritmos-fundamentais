@@ -14,7 +14,8 @@ const ALGORITHM_ROUTES = {
     input_count: 1,
     title: 'Contagem',
     url: '/contagem',
-    algorithm: math.counter
+    algorithm: math.counter,
+    format_result: (result) => `Existem ${result} números de 1 até ${result}`
   },
   ordenacao: {
     form_type: 'number_list',
@@ -35,7 +36,7 @@ const ALGORITHM_ROUTES = {
     form_type: 'number_list',
     title: 'Somatório',
     url: '/somatorio',
-    algorithm: math.somatorio,
+    algorithm: math.sum,
     format_result: (result) => `O resultado do somatório é: ${result}`
   },
   mdc: {

@@ -1,22 +1,29 @@
 <%- contentFor('title') %>
 <%= title %>
 
+<%- contentFor('style') %>
+<link rel='stylesheet' href='/static/css/algorithm.css' />
+
 <%- contentFor('body') %>
-<div class='content-box'>
-  <form action="<%= url %>" method="POST">
+<div class='content-box algorithm'>
+  <div class='algorithm-content'>
+    <h3 class='page-title'><%= title %></h3>
 
-    <% if(form_type == 'number') { %>
-      <% for(let i = 1; i <= input_count; i++) { %>
-        <input type="number" name="num<%= i %>">
+    <form action="<%= url %>" method="POST">
+
+      <% if(form_type == 'number') { %>
+        <% for(let i = 1; i <= input_count; i++) { %>
+          <input type="number" name="num<%= i %>" placeholder="Informe o <%=input_count > 1 ? i + '° ' : ''%>valor">
+        <% } %>
+      <% } else if(form_type == 'number_list') { %>
+        <input type="text" name="num_list" placeholder="Informe os valores separados por virgula.">
       <% } %>
-    <% } else if(form_type == 'number_list') { %>
-      <input type="text" name="num_list">
-    <% } %>
 
-    <input type="submit" value='enviar'>
+      <input type="submit" value='enviar'>
+    </form>
 
     <% if (typeof result !== 'undefined' && result) { %>
-      <h4><%= result %></h4>
+      <h4 class='result-text'><%= result %></h4>
     <% } %>
-  </form>
+  </div>
 </div>

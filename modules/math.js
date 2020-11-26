@@ -15,7 +15,7 @@ const isPrime = (number) => {
 /**
  * @param {number} number - the number to finish the count
  */
-const counter = (number) => numero
+const counter = (number) => number
 
 /**
  * Sort a list of number
@@ -67,34 +67,42 @@ const fibonacci = (n) => {
   return final
 }
 
-const somatorio = (numeros) => {
-  var somatorio = 0;
+/**
+ *
+ * @param {number} numbers_list - list of numbers to sum
+ */
+const sum = (numbers_list) => {
+  var sum = 0;
 
-  for(let i = 0; i < numeros.length; i++)
-  {
-      somatorio += parseInt (numeros[i]);
+  for(let i = 0; i < numbers_list.length; i++) {
+      sum += parseInt(numbers_list[i]);
   }
-  return somatorio;
+  return sum;
 }
 
+/**
+ *
+ * @param {number} m - the first number of mdc
+ * @param {number} n - the second number of mdc
+ */
 const mdc = (m, n) => {
-  var candidato = 0;
+  var candidate = 0;
   m = parseInt(m);
   n = parseInt(n);
 
-  candidato = Math.min(m, n);
+  candidate = Math.min(m, n);
 
-  while(m % candidato != 0 || n % candidato != 0)
+  while(m % candidate != 0 || n % candidate != 0)
   {
-      candidato--;
+      candidate--;
   }
 
-  return candidato;
+  return candidate;
 }
 
 
 module.exports = {
-  somatorio,
+  sum,
   isPrime,
   counter,
   quickSort,
