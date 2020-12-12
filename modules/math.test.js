@@ -12,3 +12,12 @@ test('MDC de 25 e 5 é igual a 5', () => {
 test('MDC com valores passados como string', () => {
   expect(math.mdc('25', '5')).toBe(5)
 })
+
+// Unit test to sum
+test('O somatorio de 5 e 10 é igual a 15', () =>{
+  expect(math.sum([10, 5])).toBe(15)
+})
+
+test('O somatório de 5, 10, 15 e 20 é igual a 50', () => {
+  expect(math.sum([5, 10, 15, 20])).toBe(50)
+})
