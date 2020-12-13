@@ -8,7 +8,7 @@ Esse site contém os algoritmos fundametais implementados usando node JS
 ### **Como executar?**
 - Clonar o repositório
 - Instalar as dependências: `npm install --dev`
-- Iniciar o seu servidor: `npm start`
+- Iniciar o seu servidor: `npm run dev`
 - pronto, a sua aplicação estará rodando em http://localhost:3000
 
 ### **Teste unitário - Como executar?**
