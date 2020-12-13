@@ -15,7 +15,7 @@ const isPrime = (number) => {
 /**
  * @param {number} number - the number to finish the count
  */
-const counter = (number) => number
+const counter = (number) => Math.abs(number)
 
 /**
  * Sort a list of number
@@ -49,7 +49,7 @@ const fibonacci = (n) => {
   let prenultimo = null
   let ultimo = null
   let final = []
-  for(let i = 0; i < n; i++) {
+  for(let i = 0; i <= n; i++) {
     if(prenultimo == null) {
       prenultimo = i
       final.push(prenultimo)
