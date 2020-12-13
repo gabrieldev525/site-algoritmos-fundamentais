@@ -60,3 +60,16 @@ test('Fibonnaci de 15', () => {
   const expect_result = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
   expect(math.fibonacci(15)).toStrictEqual(expect_result)
 })
+
+// Unit test to counter
+test('Existem 30 números de 1 a 30!', () => {
+  expect(math.counter(30)).toBe(30)
+})
+
+test('Contagem de valor passado como string', () => {
+  expect(math.counter('50')).toBe(50)
+})
+
+test('Contagem de -4 é igual a 4', () => {
+  expect(math.counter(-4)).toBe(4)
+})
