@@ -15,7 +15,7 @@ const isPrime = (number) => {
 /**
  * @param {number} number - the number to finish the count
  */
-const counter = (number) => number
+const counter = (number) => Math.abs(number)
 
 /**
  * Sort a list of number

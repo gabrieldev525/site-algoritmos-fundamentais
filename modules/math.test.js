@@ -21,3 +21,12 @@ test('O somatorio de 5 e 10 é igual a 15', () =>{
 test('O somatório de 5, 10, 15 e 20 é igual a 50', () => {
   expect(math.sum([5, 10, 15, 20])).toBe(50)
 })
+
+// Unit test to prime number
+test('O número 7 é primo!', () => {
+  expect(math.isPrime(7)).toBe(true)
+})
+
+test('O número 10 não é primo!', () => {
+  expect(math.isPrime(10)).toBe(false)
+})
