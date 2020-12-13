@@ -1,12 +1,23 @@
-# basic fundamental algorithms
+# Algoritmos fundamentais
 
-Site that contains the basic fundamental algorithms implemented using node JS.
+Esse site contém os algoritmos fundametais implementados usando node JS
 
-### Requirements
-- Node JS (Preferably in the latest version)
+### **Requisitos**
+- Node JS (De preferência nas últimas versões)
 
-### How to run?
-- clone the repository
-- install the dependencies: `npm install --dev`
-- start your server: `npm start`
-- done, the application still running at http://localhost:3000
+### **Como executar?**
+- Clonar o repositório
+- Instalar as dependências: `npm install --dev`
+- Iniciar o seu servidor: `npm run dev`
+- pronto, a sua aplicação estará rodando em http://localhost:3000
+
+### **Teste unitário - Como executar?**
+Para executar os testes unitários, basta executar no seu terminal o seguinte comando:
+
+```shell
+npm test
+```
+
+Pronto, os testes serão executados e validados.
+
+**Os testes unitários das funções de matemática se encontram no diretório** `modules/math.test.js`
