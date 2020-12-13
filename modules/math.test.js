@@ -30,3 +30,33 @@ test('O número 7 é primo!', () => {
 test('O número 10 não é primo!', () => {
   expect(math.isPrime(10)).toBe(false)
 })
+
+// Unit test to Quick sort
+test('Ordenando lista de valores inteiros', () => {
+  const unordered_values = [5, 25, 7, 9, 45, -5, 36]
+  const ordered_values = [-5, 5, 7, 9, 25, 36, 45]
+
+  expect(math.quickSort(unordered_values)).toStrictEqual(ordered_values)
+})
+
+test('Ordenando lista de valores com string e inteiros', () => {
+  const unordered_values = [5, '25', 7, 9, '45', '-5', 36]
+  const ordered_values = [-5, 5, 7, 9, 25, 36, 45]
+
+  expect(math.quickSort(unordered_values)).toStrictEqual(ordered_values)
+})
+
+// Unit test to fibonacci
+test('Fibonnaci de 5', () => {
+  const expect_result = [0, 1, 1, 2, 3, 5]
+  expect(math.fibonacci(5)).toStrictEqual(expect_result)
+})
+
+test('Fibonnaci de um número negativo', () => {
+  expect(math.fibonacci(-3)).toStrictEqual([])
+})
+
+test('Fibonnaci de 15', () => {
+  const expect_result = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
+  expect(math.fibonacci(15)).toStrictEqual(expect_result)
+})
