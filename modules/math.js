@@ -49,7 +49,7 @@ const fibonacci = (n) => {
   let prenultimo = null
   let ultimo = null
   let final = []
-  for(let i = 0; i < n; i++) {
+  for(let i = 0; i <= n; i++) {
     if(prenultimo == null) {
       prenultimo = i
       final.push(prenultimo)

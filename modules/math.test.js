@@ -36,3 +36,18 @@ test('Ordenando lista de valores com string e inteiros', () => {
 
   expect(math.quickSort(unordered_values)).toStrictEqual(ordered_values)
 })
+
+// Unit test to fibonacci
+test('Fibonnaci de 5', () => {
+  const expect_result = [0, 1, 1, 2, 3, 5]
+  expect(math.fibonacci(5)).toStrictEqual(expect_result)
+})
+
+test('Fibonnaci de um número negativo', () => {
+  expect(math.fibonacci(-3)).toStrictEqual([])
+})
+
+test('Fibonnaci de 15', () => {
+  const expect_result = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
+  expect(math.fibonacci(15)).toStrictEqual(expect_result)
+})
