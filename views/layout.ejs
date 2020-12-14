@@ -23,6 +23,13 @@
           <li><a href='/mdc'>MDC</a></li>
           <li><a href='/ordenacao'>Ordenação</a></li>
           <li><a href='/contagem'>Contagem</a></li>
+
+          <% if(typeof currentUser === 'undefined' || currentUser == null) { %>
+            <li><a href='/login'>Login</a></li>
+            <li><a href='/register'>Cadastro</a></li>
+          <% } else { %>
+            <li><a href='/logout'>Deslogar</a></li>
+          <% } %>
         </ul>
       </div>
     <% } %>
