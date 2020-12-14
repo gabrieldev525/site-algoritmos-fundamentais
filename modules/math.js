@@ -29,13 +29,13 @@ const quickSort = (array) => {
   let left = []
   let right = []
   let subarray = []
-  let pivo = parseInt(array.pop())
+  let pivo = parseFloat(array.pop())
 
   for(let i = 0; i < array.length; i++) {
-    if(parseInt(array[i]) <= pivo)
-      left.push(parseInt(array[i]))
+    if(parseFloat(array[i]) <= pivo)
+      left.push(parseFloat(array[i]))
     else
-      right.push(parseInt(array[i]))
+      right.push(parseFloat(array[i]))
   }
 
   return subarray.concat(quickSort(left), pivo, quickSort(right))
