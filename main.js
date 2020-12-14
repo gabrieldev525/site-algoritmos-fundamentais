@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 // login
 app.get('/login', (req, res) => {
   res.render('login', {
-    layout: null
+    layout: false
   })
 })
 
@@ -69,7 +69,7 @@ app.post('/login', (req, res) => {
 // register
 app.get('/register', (req, res) => {
   res.render('register', {
-    layout: null
+    layout: false
   })
 })
 
