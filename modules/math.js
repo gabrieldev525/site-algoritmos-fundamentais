@@ -75,7 +75,7 @@ const sum = (numbers_list) => {
   var sum = 0;
 
   for(let i = 0; i < numbers_list.length; i++) {
-      sum += parseInt(numbers_list[i]);
+      sum += parseFloat(numbers_list[i]);
   }
   return sum;
 }
