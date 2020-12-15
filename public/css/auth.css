@@ -24,6 +24,10 @@ body, html {
     box-shadow: 2px 1px 8px rgba(9, 60, 80, .4);
 }
 
+.content-box .error-form {
+    color: rgb(253, 175, 59);
+}
+
 .content-box form {
     width: 100%;
     margin-top: 2%;

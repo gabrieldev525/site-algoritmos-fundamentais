@@ -10,6 +10,11 @@
 <body>
   <div class='content-box'>
     <h2>Faça seu cadastro</h2>
+
+    <% if(typeof error !== 'undefined' && error != null) { %>
+      <span class='error-form'><%= error %></span>
+    <% } %>
+
     <form action='/register' method='POST'>
       <label for="name">Nome:</label>
       <input type='text' class='input-field' name='name'>

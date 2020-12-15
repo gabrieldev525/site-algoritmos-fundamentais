@@ -59,10 +59,12 @@ app.post('/login', (req, res) => {
       res.redirect('/')
     })
     .catch((error) => {
-      var errorCode = error.code
       var errorMessage = error.message
 
-      console.log(`${errorCode} - ${errorMessage}`)
+      res.render('login', {
+        layout: false,
+        error: errorMessage
+      })
     })
 })
 
@@ -97,10 +99,12 @@ app.post('/register', (req, res) => {
       res.redirect('/')
     })
     .catch((error) => {
-      var errorCode = error.code
       var errorMessage = error.message
 
-      console.log(`${errorCode} - ${errorMessage}`)
+      res.render('register', {
+        layout: false,
+        error: errorMessage
+      })
     })
 })
 

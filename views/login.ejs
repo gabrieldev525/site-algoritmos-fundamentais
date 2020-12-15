@@ -10,6 +10,10 @@
 <body>
   <div class='content-box'>
     <h2>Entrar</h2>
+
+    <% if(typeof error !== 'undefined' && error != null) { %>
+      <span class='error-form'><%= error %></span>
+    <% } %>
     <form action='/login' method='POST'>
       <label for="email">E-mail:</label>
       <input type='email' required class='input-field' name='email'>
