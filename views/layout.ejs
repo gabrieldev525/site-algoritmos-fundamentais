@@ -30,10 +30,6 @@
             <li><a href='/register'>Cadastro</a></li>
           <% } else { %>
             <li><a href='/logout'>Deslogar</a></li>
-
-            <% if(currentUser.displayName) { %>
-              <span><b><%= currentUser.displayName %></b></span>
-            <% } %>
           <% } %>
         </ul>
       </div>
