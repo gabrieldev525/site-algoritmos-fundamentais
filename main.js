@@ -69,5 +69,5 @@ routes_keys.forEach(item => {
 })
 
 // inicia o servidor
-const port = process.env.PORT | 3000
+const port = process.env.PORT || 3000
 app.listen(port)
