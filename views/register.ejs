@@ -5,14 +5,19 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Cadastro</title>
 
-  <link rel='stylesheet' href='/static/css/index.css' />
+  <link rel="stylesheet" href='/static/css/auth.css' />
 </head>
 <body>
   <div class='content-box'>
+    <h2>Faça seu cadastro</h2>
     <form action='/register' method='POST'>
-      <input type='text' name='name'>
-      <input type='email' name='email'>
-      <input type='password' name='password'>
+      <label for="name">Nome:</label>
+      <input type='text' class='input-field' name='name'>
+      <label for="email">E-mail:</label>
+      <input type='email' class='input-field' name='email'>
+      <label for="password">Senha:</label>
+      <input type='password' class='input-field' name='password'>
+      <a href="/login">Já possui uma conta? Faça login</a>
       <input type='submit' value='Cadastrar'>
     </form>
   </div>
