@@ -127,7 +127,7 @@ routes_keys.forEach(item => {
     res.render('algorithm', {
       menu: true,
       currentUser: user,
-      ...ALGORITHM_ROUTES[req.url.substring(1)],
+      ...curr
     })
   })
 
@@ -156,11 +156,11 @@ routes_keys.forEach(item => {
     res.render('algorithm', {
       result,
       currentUser: user,
-      ...ALGORITHM_ROUTES[req.url.substring(1)]
+      ...curr
     })
   })
 })
 
 // inicia o servidor
-const port = process.env.PORT | 3000
+const port = process.env.PORT || 3000
 app.listen(port)
