@@ -44,6 +44,10 @@ body, html {
 .menu ul.right-items li {
     margin: 0 8%;
 }
+.menu ul.right-items .username {
+    white-space: nowrap;
+    color: rgb(253, 175, 59);
+}
 .menu ul.main-items {
     position: absolute;
     left: 50%;
