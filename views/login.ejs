@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Login</title>
+
+  <link rel="stylesheet" href='/static/css/auth.css' />
+</head>
+<body>
+  <div class='content-box'>
+    <h2>Entrar</h2>
+
+    <% if(typeof error !== 'undefined' && error != null) { %>
+      <span class='error-form'><%= error %></span>
+    <% } %>
+    <form action='/login' method='POST'>
+      <label for="email">E-mail:</label>
+      <input type='email' required class='input-field' name='email'>
+      <label for="password">Senha:</label>
+      <input type='password' required class='input-field' name='password'>
+      <a href="/register">Crie sua conta aqui</a>
+      <input type='submit' value='Entrar'>
+    </form>
+  </div>
+</body>
+</html>

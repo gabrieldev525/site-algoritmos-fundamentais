@@ -15,7 +15,7 @@
       <div class='menu'>
         <img src='/static/images/top-image.png' class='top-image' />
 
-        <ul>
+        <ul class='main-items'>
           <li><a href='/'>Inicio</a></li>
           <li><a href='/primo'>Número primo</a></li>
           <li><a href='/somatorio'>Somatório</a></li>
@@ -23,6 +23,14 @@
           <li><a href='/mdc'>MDC</a></li>
           <li><a href='/ordenacao'>Ordenação</a></li>
           <li><a href='/contagem'>Contagem</a></li>
+        </ul>
+        <ul class='right-items'>
+          <% if(typeof currentUser === 'undefined' || currentUser == null) { %>
+            <li><a href='/login'>Login</a></li>
+            <li><a href='/register'>Cadastro</a></li>
+          <% } else { %>
+            <li><a href='/logout'>Deslogar</a></li>
+          <% } %>
         </ul>
       </div>
     <% } %>
